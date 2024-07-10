@@ -58,7 +58,7 @@ INSERT INTO People (Name, Surname, PhoneNumber, Email, BirthDate, Gender, HasCit
 ('Marie', 'Curie', '0678901234', 'marie.curie@example.com', '1989-07-20', 'F', 1, 5, 5);
 
 
-CREATE VIEW PersonDetails AS
+CREATE VIEW Details AS
 SELECT p.Id, p.Name, p.Surname, p.PhoneNumber, p.Email, p.BirthDate, p.Gender, p.HasCitizenship, 
        c.Name AS CountryName, ct.Name AS CityName
 FROM People p
@@ -66,7 +66,7 @@ JOIN Countries c ON p.CountryId = c.Id
 JOIN Cities ct ON p.CityId = ct.Id;
 
 
-SELECT * FROM PersonDetails;
+SELECT * FROM Details;
 
 
 SELECT * FROM Countries
